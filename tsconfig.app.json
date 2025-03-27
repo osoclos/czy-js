@@ -1,12 +1,16 @@
 {
     "extends": "./tsconfig.lib.json",
-    "include": ["tests/client"],
+    "include": ["tests/client", "tests/shared"],
 
     "compilerOptions": {
         // Modules
         "paths": {
             "czy-js": ["./src"],
             "czy-js/*": ["./src/*"]
-        }
+        },
+
+        // Language and Environment
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "target": "ES2020"
     }
 }
