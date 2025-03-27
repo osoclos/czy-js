@@ -1,0 +1,28 @@
+{
+  "name": "czy-js",
+  "description": "",
+  "type": "module",
+  "version": "0.0.0-dev-1a",
+  "author": "osoclos",
+  "license": "MIT",
+  "files": ["dist"],
+  "main": "dist/index.min.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osoclos/czy-js.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/bun": "latest",
+    "typescript": "~5.7.3",
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^4.5.0"
+  },
+  "scripts": {
+    "test-client": "vite",
+    "test-server": "bun run --watch tests/server/index.ts",
+    "build": "tsc -b --project tsconfig.lib.json && vite build --emptyOutDir"
+  }
+}

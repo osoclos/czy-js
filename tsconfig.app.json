@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.lib.json",
+    "include": ["tests/client"],
+
+    "compilerOptions": {
+        // Modules
+        "paths": {
+            "czy-js": ["./src"],
+            "czy-js/*": ["./src/*"]
+        }
+    }
+}

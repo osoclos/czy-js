@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.json",
+    "include": ["tests/server", "vite.config.ts"],
+
+    "compilerOptions": {
+		// Modules
+        "paths": {
+            "czy-js": ["./src"],
+            "czy-js/*": ["./src/*"]
+        },
+		
+        // Language and Environment
+        "lib": ["ESNext"],
+        "target": "ESNext"
+    }
+}
