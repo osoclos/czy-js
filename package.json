@@ -6,8 +6,7 @@
   "author": "osoclos",
   "license": "MIT",
   "files": ["dist"],
-  "main": "dist/index.min.js",
-  "module": "dist/index.es.js",
+  "module": "dist/index.min.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -23,6 +22,6 @@
   "scripts": {
     "test-client": "vite",
     "test-server": "bun run --watch tests/server/index.ts",
-    "build": "tsc -b --project tsconfig.lib.json && vite build --emptyOutDir"
+    "build": "tsc --project tsconfig.lib.json && vite build --emptyOutDir"
   }
 }

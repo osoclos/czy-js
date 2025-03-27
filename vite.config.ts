@@ -9,13 +9,9 @@ import dtsPlugin from "vite-plugin-dts";
 import type { ModuleFormat, OutputOptions } from "rollup";
 import terser from "@rollup/plugin-terser";
 
-const output = <OutputOptions[]>(<ModuleFormat[]>["es", "iife"]).map((format) => ({
+const output = <OutputOptions[]>(<ModuleFormat[]>["esm"]).map((format) => ({
     format,
-    
-    entryFileNames: `index${format === "iife" ? "" : ".[format]"}.min.js`,
-    name: "Czy",
-    
-    exports: "named",
+    entryFileNames: `index.min.js`,
 
     plugins: [terser()]
 }));
@@ -32,12 +28,7 @@ export default defineConfig({
         sourcemap: true,
         rollupOptions: { output },
 
-        lib: {
-            entry: {
-                esm: path.join(__dirname, "src/index.ts"),
-                iife: path.join(__dirname, "src/index.iife.ts")
-            }
-        }
+        lib: { entry: path.join(__dirname, "src/index.ts") }
     },
 
     plugins: [dtsPlugin({
