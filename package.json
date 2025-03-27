@@ -1,8 +1,8 @@
 {
   "name": "czy-js",
-  "description": "",
+  "description": "Try-catch Replacement for JavaScript",
   "type": "module",
-  "version": "0.0.0-dev-1a",
+  "version": "1.0.0",
   "author": "osoclos",
   "license": "MIT",
   "files": ["dist"],
