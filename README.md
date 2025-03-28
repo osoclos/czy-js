@@ -13,15 +13,18 @@ $ npm install czy-js
 ## Usage
 
 ``` js
-import czy, { settings } from "czy-js";
+import czy from "czy-js";
 
 const { data, err } = czy(fetch("..."));
 
 // throw the error if it exists...
-if (err) throw new Error("There is an error!");
+if (err) throw err;
 
 // otherwise use the data
 console.log(data);
+
+// if you prefer a success true/false rather than an error, you can do that as well!
+const { success, data } = czy(fetch("..."));
 
 // it is also possible to destructure the output as an array:
 const [err, data] = czy(fetch("..."));

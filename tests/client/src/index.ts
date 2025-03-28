@@ -1,9 +1,24 @@
 import czy from "czy-js";
-import { defRealFetch } from "../../shared";
+import { loadADefRealSite, smallRandomNum } from "../../shared";
 
 import "./style.css";
 
-const [err, data] = await czy(defRealFetch("https://superduper.cool-web.site/"));
-if (err) throw err;
+for (const _ of Array(100)) {
+    const { success, data } = czy(smallRandomNum);
+    if (!success) {
+        console.error("WHAT??! IT WAS UNSUCCESSFUL??!!!! >:(");
+        continue;
+    }
 
-data;
+    console.log("YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
+}
+
+for (const _ of Array(10)) {
+    const [err, data] = await czy(loadADefRealSite("https://super.duper-sexy.website/"));
+    if (err) {
+        console.error("Why can't I visit the website???? :(");
+        continue;
+    }
+
+    console.log(data);
+}

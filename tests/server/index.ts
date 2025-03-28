@@ -1,8 +1,22 @@
 import czy from "czy-js";
-import { smallRandomNum, defRealFetch } from "../shared";
+import { smallRandomNum, loadADefRealSite } from "../shared";
 
-console.log(Array(100).fill(null).map(czy.bind(null, smallRandomNum)));
 for (const _ of Array(100)) {
-    const [err, data] = await czy(defRealFetch("https://superduper.cool-web.site/"));
-    console.log(err, data);
+    const { success, data } = czy(smallRandomNum);
+    if (!success) {
+        console.error("WHAT??! IT WAS UNSUCCESSFUL??!!!! >:(");
+        continue;
+    }
+
+    console.log("YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
+}
+
+for (const _ of Array(10)) {
+    const [err, data] = await czy(loadADefRealSite("https://super.duper-sexy.website/"));
+    if (err) {
+        console.error("Why can't I visit the website???? :(");
+        continue;
+    }
+
+    console.log(data);
 }

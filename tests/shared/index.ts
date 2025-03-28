@@ -1,2 +1,2 @@
 export * from "./smallRandomNum";
-export * from "./defRealFetch";
+export * from "./loadADefRealSite";
