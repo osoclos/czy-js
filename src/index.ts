@@ -1,6 +1,5 @@
 export * from "./types";
+export * from "./utils";
 
 import { czy } from "./czy";
-export * from "./czy";
-
 export default czy;

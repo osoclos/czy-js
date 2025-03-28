@@ -1,4 +1,4 @@
-import { czy } from "czy-js";
+import czy from "czy-js";
 import { smallRandomNum, defRealFetch } from "../shared";
 
 console.log(Array(100).fill(null).map(czy.bind(null, smallRandomNum)));
