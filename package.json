@@ -2,7 +2,7 @@
   "name": "czy-js",
   "description": "Try-catch Replacement for JavaScript",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "osoclos",
   "license": "MIT",
   "files": ["dist"],
