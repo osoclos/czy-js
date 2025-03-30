@@ -20,11 +20,10 @@ function dataErr<T, E extends Error>(arg: Promise<T> | (() => Promise<T>)): Prom
 function dataErr<T, E extends Error>(arg: () => T): SwappedResult<T, E>;
 function dataErr<T, E extends Error>(arg: Promise<T> | (() => MaybePromise<T>)): MaybePromise<SwappedResult<T, E>> {
     return transformMaybePromise(czy(arg), (result) => {
-        return <SwappedResult<T, E>>{ ...result, [Symbol.iterator]: resultIterator };
+        const { data, err } = result;
+        return <SwappedResult<T, E>>{ ...result, 0: data, 1: err, [Symbol.iterator]: resultIterator };
 
         function* resultIterator() {
-            const { data, err } = result;
-
             yield data;
             yield err;
         }

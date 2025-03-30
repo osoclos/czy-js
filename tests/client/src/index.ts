@@ -6,26 +6,26 @@ import "./style.css";
 for (const _ of Array(100)) {
     const { success, data } = czy(smallRandomNum);
     if (!success) {
-        console.error("WHAT??! IT WAS UNSUCCESSFUL??!!!! >:(");
+        console.error("1: WHAT??! IT WAS UNSUCCESSFUL??!!!! >:(");
         continue;
     }
 
-    console.log("YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
+    console.log("1: YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
 }
 
 for (const _ of Array(100)) {
     const [data, err] = czy.dataErr(smallRandomNum);
-    if (!err) {
-        console.error("WHAT??! IT WAS UNSUCCESSFUL??!!!! >:(");
+    if (err) {
+        console.error("2: WHAT??! IT WAS UNSUCCESSFUL??!!!! >:(");
         continue;
     }
 
-    console.log("YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
+    console.log("2: YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
 }
 
 for (const _ of Array(100)) {
-    const data = czy.dataErr(smallRandomNum).resolve();
-    console.log("YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
+    const data = czy(smallRandomNum).resolve();
+    console.log("3: YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
 }
 
 for (const _ of Array(10)) {
