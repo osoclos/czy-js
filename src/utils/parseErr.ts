@@ -6,6 +6,8 @@ export function parseErr(err: any): Error {
         case (errType === "string"): return new Error(err);
         case (errType === "object"): return new Error(err === null ? err : JSON.stringify(err));
 
+        case (errType === "symbol"): return new Error(err.description);
+
         default: return new Error(`${err}`);
     }
 }
