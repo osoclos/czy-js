@@ -31,6 +31,9 @@ const [err, data] = czy(fetch("..."));
 
 // if you rather destructure as data-first, this option is available too!
 const [data, err] = czy.dataErr(fetch("..."));
+
+// or you can immediately resolve it as a one-liner
+const data = czy(fetch("...")).resolve();
 ```
 
 ## Documentation
