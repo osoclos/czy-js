@@ -28,6 +28,9 @@ const { success, data } = czy(fetch("..."));
 
 // it is also possible to destructure the output as an array:
 const [err, data] = czy(fetch("..."));
+
+// if you rather destructure as data-first, this option is available too!
+const [data, err] = czy.dataErr(fetch("..."));
 ```
 
 ## Documentation
