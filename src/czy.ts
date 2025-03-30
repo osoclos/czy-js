@@ -18,6 +18,8 @@ export function czy<T, E extends Error = Error>(arg: Promise<T> | (() => MaybePr
 
 czy.dataErr = dataErr;
 
+function dataErr<T, E extends Error>(arg: () => Promise<void>): Promise<SwappedResult<T, E>>;
+function dataErr<T, E extends Error>(arg: VoidFunction): SwappedResult<T, E>;
 function dataErr<T, E extends Error>(arg: Promise<T> | (() => Promise<T>)): Promise<SwappedResult<T, E>>;
 function dataErr<T, E extends Error>(arg: () => T): SwappedResult<T, E>;
 function dataErr<T, E extends Error>(arg: Promise<T> | (() => MaybePromise<T>)): MaybePromise<SwappedResult<T, E>> {
