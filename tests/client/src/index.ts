@@ -23,11 +23,6 @@ for (const _ of Array(100)) {
     console.log("2: YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
 }
 
-for (const _ of Array(100)) {
-    const data = czy(smallRandomNum).resolve();
-    console.log("3: YIPEEEEEEEEEEEEE!!!! SUCCESSFUL!!!", "I GOT: ", data);
-}
-
 for (const _ of Array(10)) {
     const [err, data] = await czy(loadADefRealSite("https://super.duper-sexy.website/"));
     if (err) {

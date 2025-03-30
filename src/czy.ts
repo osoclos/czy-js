@@ -1,6 +1,8 @@
 import type { MaybePromise, Result, SwappedResult } from "./types";
 import { createResult, parseErr, transformMaybePromise } from "./utils";
 
+export function czy<T, E extends Error>(arg: () => Promise<void>): Promise<Result<T, E>>;
+export function czy<T, E extends Error>(arg: VoidFunction): Result<T, E>;
 export function czy<T, E extends Error>(arg: Promise<T> | (() => Promise<T>)): Promise<Result<T, E>>;
 export function czy<T, E extends Error>(arg: () => T): Result<T, E>;
 export function czy<T, E extends Error = Error>(arg: Promise<T> | (() => MaybePromise<T>)): MaybePromise<Result<T, E>>;
